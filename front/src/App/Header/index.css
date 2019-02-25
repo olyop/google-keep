@@ -1,0 +1,38 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 70px;
+  z-index: 2;
+  border-bottom: 1px solid #DADCE0; }
+  .Header__left,
+  .Header__right {
+    padding: 0 20px;
+    display: flex;
+    align-items: center; }
+    .Header__hamburger {
+      padding: 0;
+      margin-top: 3px;
+      margin-right: 20px;
+      outline: none; }
+      .Header__hamburger-inner,
+      .Header__hamburger-inner:before,
+      .Header__hamburger-inner:after {
+        background-color: #333333 !important; }
+    .Header__logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px; }
+      .Header__logo {
+        width: 32px;
+        height: 32px; }
+    .Header__title {
+      margin: 0 0 3px 0;
+      line-height: 25px;
+      color: #757575;
+      font-weight: 300;
+      font-size: 25px; }
+  .Header__foo {
+    font-size: 28px;
+  }

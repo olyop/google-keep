@@ -1,0 +1,13 @@
+.Form {
+  padding: 30px; }
+  .Form__heading {
+    background-color: #EEEEEE;
+    padding: 20px;
+    margin: 0;
+    font-size: 28px; }
+  .Form__submit {
+    margin-top: 20px;
+    display: flex;
+    align-items: center; }
+    .Form__status {
+      margin: 0 0 0 20px; }

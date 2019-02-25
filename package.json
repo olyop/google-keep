@@ -1,0 +1,28 @@
+{
+  "name": "google-keep-clone",
+  "description": "Google Keep Clone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olyop/template.git"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [],
+  "author": "Oliver Plummer",
+  "bugs": {
+    "url": "https://github.com/olyop/template/issues"
+  },
+  "homepage": "",
+  "proxy": "http://localhost:3000/",
+  "scripts": {
+    "front": "clear && cd front && npm start",
+    "back": "clear && cd back && nodemon bin/www",
+    "dependencies": "cd front && rm -f package-lock.json && npm i && cd .. && cd back && rm -f package-lock.json && npm i && cd ..",
+    "update": "cd front && npm update && cd .. && cd back && npm update && cd ..",
+    "audit": "cd front && npm audit fix && cd .. && cd back && npm audit fix && cd ..",
+    "build": "cd front && npm run build && cd ..",
+    "push": "git add -A && git commit -m 'Update' && git push -u origin master",
+    "edit": "git checkout . && git remote update && git pull"
+  }
+}

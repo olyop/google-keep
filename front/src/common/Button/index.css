@@ -1,0 +1,6 @@
+.Button {}
+  .Button__space {
+    height: 1px; }
+  .Button__text {
+    text-transform: none;
+    margin: 0; }

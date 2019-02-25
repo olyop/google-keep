@@ -1,0 +1,15 @@
+.Field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; }
+  .Field:last-child {
+    margin-bottom: 0; }
+  .Field__row {
+    display: flex;
+    align-items: center;
+    flex-direction: row; }
+    .Field__row-p {
+      margin: 0; }
+  .Field__column {
+    display: flex;
+    flex-direction: column; }

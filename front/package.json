@@ -1,0 +1,47 @@
+{
+  "name": "google-keep-clone",
+  "description": "Google Keep Clone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olyop/template.git"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [],
+  "author": "Oliver Plummer",
+  "bugs": {
+    "url": "https://github.com/olyop/template/issues"
+  },
+  "homepage": "",
+  "proxy": "http://localhost:3000/",
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "axios": "^0.18.0",
+    "he": "^1.2.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.23.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.3",
+    "react-contenteditable": "^3.2.6",
+    "react-dom": "^16.8.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.4",
+    "shortid": "^2.2.14"
+  },
+  "scripts": {
+    "start": "cross-env PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

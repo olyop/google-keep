@@ -1,0 +1,12 @@
+.Content {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 17px;
+  z-index: 1; }
+  .Views {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100vw;
+    height: calc(100vh - 70px); }
