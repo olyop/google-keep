@@ -1,23 +1,23 @@
 import React, { Component, Fragment } from 'react'
 
-import App from '../App'
-import Form from '../common/Form'
-import Loading from '../common/Loading'
 import AxiosError from '../common/AxiosError'
 import AccountsList from './AccountsList'
+import Loading from '../common/Loading'
 import formConfig from './formConfig'
+import Form from '../common/Form'
+import App from '../App'
 
-import axios from 'axios'
-import { componentClassNames } from '../helpers'
-import { concat, isNull, isArray, isError, find } from 'lodash'
 import { API_ACCOUNTS as url, AXIOS_CONFIG as config } from '../globals'
+import { concat, isNull, isArray, isError, find } from 'lodash'
+import { componentClassNames } from '../helpers'
 import initState from './initState'
+import axios from 'axios'
 
 import './index.css'
 
 const bem = componentClassNames('Accounts')
 
-class Accounts extends Component {
+export default class Accounts extends Component {
   constructor(props) {
     super(props)
     this.state = initState
@@ -89,5 +89,3 @@ class Accounts extends Component {
     }
   }
 }
-
-export default Accounts
