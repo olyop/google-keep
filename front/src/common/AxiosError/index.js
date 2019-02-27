@@ -1,4 +1,5 @@
 import React from 'react'
+import { instanceOf } from 'prop-types'
 
 import { upperFirst } from 'lodash'
 import { componentClassNames } from '../../helpers'
@@ -8,14 +9,14 @@ import './index.css'
 const bem = componentClassNames('AxiosError')
 
 const AxiosErrorPre = ({ obj }) => (
-  <pre {...bem('pre')}>
+  <pre className={bem('pre')}>
     {JSON.stringify(obj, undefined, 2)}
   </pre>
 )
 
 const AxiosErrorListItem = ({ item, err }) => (
-  <div {...bem('item')}>
-    <h2 {...bem('h2')}>{upperFirst(item)}</h2>
+  <div className={bem('item')}>
+    <h2 className={bem('h2')}>{upperFirst(item)}</h2>
     <AxiosErrorPre obj={err[item === 'request' ? 'config' : item] || {}} />
   </div>
 )
@@ -23,9 +24,9 @@ const AxiosErrorListItem = ({ item, err }) => (
 const AxiosError = ({ err }) => {
   if (err.response) { console.error(err.response.data) }
   return (
-    <div {...bem('')}>
-      <h1 {...bem('h1')}>Axios Error</h1>
-      <div {...bem('list')}>
+    <div className={bem('')}>
+      <h1 className={bem('h1')}>Axios Error</h1>
+      <div className={bem('list')}>
         {['request', 'response'].map(item => (
           <AxiosErrorListItem
             key={item}
@@ -36,6 +37,10 @@ const AxiosError = ({ err }) => {
       </div>
     </div>
   )
+}
+
+AxiosError.propTypes = {
+  err: instanceOf(Error)
 }
 
 export default AxiosError

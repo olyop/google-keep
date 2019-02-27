@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 
 import shortid from 'shortid'
 
@@ -69,7 +69,7 @@ const DateType = ({val,handleChange,name,camelCase,type,required,helperText}) =>
 )
 
 DateType.propTypes = {
-  val: PropTypes.object.isRequired
+  val: object.isRequired
 }
 
 export default DateType

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 
 import Input from '@material-ui/core/Input'
 import HelperText from '../../HelperText'
@@ -43,7 +43,7 @@ const MobileNumber = ({val,handleChange,name,camelCase,type,placeholder,required
 )
 
 MobileNumber.propTypes = {
-  val: PropTypes.object.isRequired
+  val: object.isRequired
 }
 
 export default MobileNumber

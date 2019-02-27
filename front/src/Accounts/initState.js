@@ -1,6 +1,6 @@
 export default {
   accounts: null,
-  createAccount: false,
+  createAccount: true,
   isLoggedIn: true,
   account: null
 }

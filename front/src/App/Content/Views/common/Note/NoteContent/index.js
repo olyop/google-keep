@@ -8,22 +8,22 @@ import { propTypes } from './props'
 const bem = componentClassNames('Note')
 
 const NoteContent = ({ toggleEdit, handleInputChange, edit, title, note }) => (
-  <div {...bem('content')}>
+  <div className={bem('content')}>
     {edit ? <Fragment>
       <ContentEditable
-        {...bem('title')}
+        className={bem('title')}
         html={title}
         onChange={handleInputChange('title')}
       />
       <ContentEditable
-        {...bem('note')}
+        className={bem('note')}
         html={note}
         onChange={handleInputChange('note')}
       />
     </Fragment> : <Fragment>
       {title === '' ? null : (
         <h3
-          {...bem('title')}
+          className={bem('title')}
           children={title}
           onDoubleClick={toggleEdit}
           onChange={handleInputChange('title')}
@@ -31,7 +31,7 @@ const NoteContent = ({ toggleEdit, handleInputChange, edit, title, note }) => (
         />
       )}
       <p
-        {...bem('note')}
+        className={bem('note')}
         children={note}
         onDoubleClick={toggleEdit}
         onChange={handleInputChange('note')}

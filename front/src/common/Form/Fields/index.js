@@ -1,9 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Field from './Field'
 
-const Fields = ({state,handleChange,fields}) => (
+import { propTypes } from './props'
+
+const Fields = ({ state, handleChange, fields }) => (
   <div className="Form__fields">
     {fields.map(field => (
       <Field
@@ -16,10 +17,6 @@ const Fields = ({state,handleChange,fields}) => (
   </div>
 )
 
-Fields.propTypes = {
-  state: PropTypes.object.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  fields: PropTypes.array.isRequired
-}
+Fields.propTypes = propTypes
 
 export default Fields

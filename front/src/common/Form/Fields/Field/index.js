@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
-import { fieldTypes } from '../../globals'
 
 import MobileNumber from './types/MobileNumber'
 import BooleanType from './types/BooleanType'
 import Selection from './types/Selection'
 import TextType from './types/TextType'
 import DateType from './types/DateType'
+
+import { propTypes } from './props'
 
 import './index.css'
 
@@ -28,23 +27,6 @@ const Field = props => {
   }
 }
 
-Field.propTypes = {
-  val: PropTypes.any.isRequired,
-  errors: PropTypes.array.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  camelCase: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(fieldTypes).isRequired,
-  required: PropTypes.bool,
-  helperText: PropTypes.string,
-  selections: PropTypes.arrayOf(PropTypes.object),
-  def: PropTypes.any,
-  placeholder: PropTypes.string,
-  maxLength: PropTypes.number,
-  validation: PropTypes.arrayOf(PropTypes.func),
-  booleanText: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number
-}
+Field.propTypes = propTypes
 
 export default Field

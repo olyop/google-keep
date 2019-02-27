@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 
-import CustomButton from '../../../../../common/Button'
+import Button from '../../../../../common/Button'
 import NoteContent from './NoteContent'
 
 import { componentClassNames } from '../../../../../helpers'
@@ -41,7 +41,7 @@ export default class Note extends Component {
   )
   handleSubmit = () => {
     const { props, state, toggleEdit } = this
-    const { putNote, _id, type, color, dateCreated, listItems, pinned } = props
+    const { putNote, _id, type, color, dateCreated, listItems, pinned, hidden } = props
     const { title, note } = state.fields
     if (title === props.title && note === props.note) {
       toggleEdit()
@@ -49,7 +49,7 @@ export default class Note extends Component {
       this.setState(
         { isEditing: true },
         putNote(
-          submitFields({ _id, type, title, note, color, dateCreated, listItems, pinned }),
+          submitFields({ _id, type, title, note, color, dateCreated, listItems, pinned, hidden }),
           res => this.setState(initState(res.data.title, res.data.note))
         )
       )
@@ -65,19 +65,25 @@ export default class Note extends Component {
     const noteInnerStyle = { backgroundColor: color, borderColor: color === COLORS[0] ? COLORS[1] : color }
     const buttonProps ={ padding: 3, loadingSize: 24 }
     return (
-      <div {...bem('')}>
-        <div {...bem('inner')} style={noteInnerStyle}>
+      <div className={bem('')}>
+        <div className={bem('inner')} style={noteInnerStyle}>
+          <Button
+            className={bem('close')}
+            icon="close"
+            iconClassName={bem('close-icon')}
+            padding={0}
+          />
           <NoteContent {...{ toggleEdit, handleInputChange, title, note, edit }} />
-          <div {...bem('actions')}>
+          <div className={bem('actions')}>
             {edit ? <Fragment>
-              <CustomButton
+              <Button
                 onClick={handleSubmit}
                 icon="save"
                 text="Save"
                 loading={isEditing}
                 {...buttonProps}
               />
-              <CustomButton
+              <Button
                 onClick={cancelEdit}
                 disabled={isEditing}
                 icon="done"
@@ -86,23 +92,26 @@ export default class Note extends Component {
                 {...buttonProps}
               />
             </Fragment> : <Fragment>
-              <CustomButton
+              <Button
                 onClick={togglePinned(_id)}
                 disabled={isDeleting}
+                className={bem('icon')}
                 icon={pinned ? 'turned_in' : 'turned_in_not'}
                 loading={isPinning}
                 {...buttonProps}
               />
-              <CustomButton
+              <Button
                 onClick={deleteNote(_id)}
                 disabled={isPinning}
+                className={bem('icon')}
                 icon="delete"
                 loading={isDeleting}
                 {...buttonProps}
               />
-              <CustomButton
+              <Button
                 onClick={toggleEdit}
                 disabled={isPinning || isDeleting}
+                className={bem('icon')}
                 icon="edit"
                 loading={isEditing}
                 {...buttonProps}

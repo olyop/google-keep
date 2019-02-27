@@ -7,6 +7,7 @@ export default {
     title: '',
     note: '',
     pinned: false,
+    hidden: false,
     type: 'note',
     color: COLORS[0]
   }

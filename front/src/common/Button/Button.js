@@ -14,7 +14,7 @@ const bem = componentClassNames('Button')
 
 const CustomButton = ({
   classes, onClick, padding, border, loading, borderRadius, disabled, text, iconTextSpace,
-  textClassName, icon, iconClassName, iconTextSpacing, loadingHideText, loadingSize
+  textClassName, icon, iconClassName, iconTextSpacing, loadingHideText, loadingSize, html
 }) => (
   <Button
     onClick={onClick}
@@ -28,29 +28,34 @@ const CustomButton = ({
     }}
     disabled={disabled}
     children={<Fragment>
-      {loading ? (
-        <CircularProgress size={loadingSize} />
-      ) : <Fragment>
-        {icon ? (
-          <i
-            {...bem({ ignore: true, className: iconClassName }, 'icon', { ignore: true, className: 'material-icons' })}
-            children={icon}
+      {html ? html : <Fragment>
+        {loading ? (
+          <CircularProgress size={loadingSize} />
+        ) : <Fragment>
+          {icon ? (
+            <i
+              className={bem(
+                { ignore: true, className: iconClassName },
+                { ignore: true, className: 'material-icons' }
+              )}
+              children={icon}
+            />
+          ) : null}
+        </Fragment>}
+        {icon && text ? (
+          <div
+            className={bem('space')}
+            style={{ width: iconTextSpace }}
           />
         ) : null}
-      </Fragment>}
-      {icon && text ? (
-        <div
-          {...bem('space')}
-          style={{ width: iconTextSpace }}
-        />
-      ) : null}
-      {loading && loadingHideText ? null : <Fragment>
-        {text ? (
-          <p
-            {...bem('text', { ignore: true, className: textClassName })}
-            children={text}
-          />
-        ) : null}
+        {loading && loadingHideText ? null : <Fragment>
+          {text ? (
+            <p
+              className={bem({ ignore: true, className: textClassName }, 'text')}
+              children={text}
+            />
+          ) : null}
+        </Fragment>}
       </Fragment>}
     </Fragment>}
   />

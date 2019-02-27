@@ -42,10 +42,13 @@ export default class Accounts extends Component {
   )
   addAccount = (data, callback) => {
     axios.post(url, data, config)
-      .then(res => this.setState(
-        ({ accounts }) => ({ accounts: concat(accounts, res.data) }),
-        callback(res)
-      ))
+      .then(res => {
+        this.setState(
+          ({ accounts }) => ({ accounts: concat(accounts, res.data) }),
+          callback
+        )
+        this.toggleCreateAccount()
+      })
       .catch(err => this.setState({ accounts: err }))
   }
   deleteAccount = _id => () => {
@@ -66,14 +69,15 @@ export default class Accounts extends Component {
       return <Loading />
     } else if (isArray(accounts)) {
       return (
-        <div {...bem('')}>
-          <div {...bem('inner')}>
+        <div className={bem('')}>
+          <div className={bem('inner')}>
             {createAccount ? <Fragment>
-              <h1 {...bem('heading')}>Add Account</h1>
+              <h1 className={bem('heading')}>Add Account</h1>
               <Form
                 fields={formConfig}
                 handleSubmit={addAccount}
                 handleClose={toggleCreateAccount}
+                className={bem('form')}
               />
             </Fragment> : <Fragment>
               <AccountsList

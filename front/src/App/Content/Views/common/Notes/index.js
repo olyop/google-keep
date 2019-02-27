@@ -13,7 +13,7 @@ const Notes = ({
   notes, pinnedLoading, deleteLoading,
   togglePinned, putNote, deleteNote, className
 }) => (
-  <div {...bem('')}>
+  <div className={bem({ ignore: true, className }, '')}>
     {notes.map(note => (
       <Note
         {...note}

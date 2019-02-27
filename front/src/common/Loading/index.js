@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { classNames } from '../../helpers'
+import { componentClassNames } from '../../helpers'
 import CircularProgress  from '@material-ui/core/CircularProgress'
 
 import './index.css'
 
+const bem = componentClassNames('Loading')
+
 const Loading = () => (
-  <div {...classNames('Loading')}>
+  <div className={bem('')}>
     <CircularProgress size={50} />
   </div>
 )

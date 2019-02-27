@@ -6,4 +6,17 @@
   flex-direction: column; }
   .NotesView__create {
     width: 500px;
-    margin: 20px 0 10px 0; }
+    margin: 20px 0; }
+  .NotesView__notes {
+    display: flex;
+    flex-direction: column;
+    width: 1000px; }
+    .NotesView__heading {
+      margin: 20px 0 5px 35px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #757575;
+      font-size: 13px; }
+    .NotesView__notes-pinned {
+      margin-bottom: 30px; }
+    .NotesView__notes-not-pinned {}

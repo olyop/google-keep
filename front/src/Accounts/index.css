@@ -5,14 +5,17 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden; }
-.Accounts__inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 450px;
-  transition: .2s all; }
-  .Accounts__heading {
-    margin: 0;
-    padding: 30px;
-    padding-bottom: 0; }
+  .Accounts__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    transition: .2s all; }
+    .Accounts__heading {
+      margin: 0;
+      padding: 30px;
+      font-size: 25px;
+      padding-bottom: 0; }
+    .Accounts__form {
+      width: 400px; }

@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { array } from 'prop-types'
 
 import FormHelperText from '@material-ui/core/FormHelperText'
 
@@ -22,7 +22,7 @@ const Errors = ({ errors }) => {
 }
 
 Errors.propTypes = {
-  errors: PropTypes.array.isRequired
+  errors:array.isRequired
 }
 
 export default Errors

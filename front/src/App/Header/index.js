@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Button from '../../common/Button'
 
@@ -12,47 +12,55 @@ const bem = componentClassNames('Header')
 
 const Hamburger = ({ hamburger, toggleHamburger }) => (
   <button
-    {...bem(
+    onClick={toggleHamburger}
+    className={bem(
       'hamburger',
       { ignore: true, className: hamburger ? 'is-active' : undefined },
       { ignore: true, className: 'hamburger' },
-      { ignore: true, className: 'hamburger-boring' }
+      { ignore: true, className: 'hamburger--boring' }
     )}
-    onClick={toggleHamburger}
     type="button"
     children={(
-      <span {...classNames('box', 'hamburger-box')}>
-        <span {...bem('hamburger-inner', { ignore: true, className: 'hamburger-inner' })} />
+      <span {...classNames('hamburger-box')}>
+        <span className={bem('hamburger-inner', { ignore: true, className: 'hamburger-inner' })} />
       </span>
     )}
   />
 )
 
 const Logo = () => (
-  <a {...bem('logo-link')} href="/">
+  <a className={bem('logo-link')} href="/">
     <img
-      {...bem('logo')}
+      className={bem('logo')}
       src={AWS_LOGO}
       alt="google-keep"
     />
   </a>
 )
 
-const Title = () => <h1 {...bem('title')}>Keep</h1>
+const Title = () => <h1 className={bem('title')}>Keep</h1>
+
+const AccountButton = () => (
+  <Button
+    className={bem('account')}
+    padding={0}
+    html={<Fragment>
+      <div className={bem('account-icon-container')}>
+        <i className={bem('account-icon', { ignore: true, className: 'material-icons' })}>account_circle</i>
+      </div>
+    </Fragment>}
+  />
+)
 
 const Header = ({ hamburger, toggleHamburger }) => (
-  <div {...bem('')}>
-    <div {...bem('left')}>
+  <div className={bem('')}>
+    <div className={bem('left')}>
       <Hamburger {...{ hamburger, toggleHamburger }} />
       <Logo />
       <Title />
     </div>
-    <div {...bem('right')}>
-      <Button
-        icon="turned_in_not"
-        iconClassName="Header__foo"
-        padding={8}
-      />
+    <div className={bem('right')}>
+      <AccountButton />
     </div>
   </div>
 )

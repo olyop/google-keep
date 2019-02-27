@@ -1,4 +1,4 @@
-import { string, number, bool, object, oneOfType } from 'prop-types'
+import { string, number, bool, object, node, oneOfType } from 'prop-types'
 
 export const propTypes = {
   classes: object.isRequired,
@@ -12,7 +12,8 @@ export const propTypes = {
   loading: bool,
   loadingHideText: bool,
   loadingSize: number,
-  iconTextSpace: number
+  iconTextSpace: number,
+  html: node
 }
 
 export const defaultProps = {
@@ -26,5 +27,6 @@ export const defaultProps = {
   loading: false,
   loadingHideText: false,
   loadingSize: 20,
-  iconTextSpace: 3
+  iconTextSpace: 3,
+  html: undefined
 }

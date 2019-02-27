@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 import Input from '@material-ui/core/Input'
 
-import { classNames, componentClassNames } from '../../../../../helpers'
+import { componentClassNames } from '../../../../../helpers'
 import { withStyles } from '@material-ui/core/styles'
 import { COLORS } from '../../../../../globals'
 import { checkCanSubmit } from './helpers'
@@ -56,33 +56,33 @@ class CreateNote extends Component {
     const { title, note, pinned, color } = fields
     const canSubmit = checkCanSubmit(fields)
     return (
-      <div {...classNames(className, 'CreateNote')}>
+      <div className={bem({ ignore: true, className }, '')}>
         <input
-          {...bem('title')}
+          className={bem('title')}
           value={title}
           onChange={handleChange('title')}
           type="text"
           placeholder="Title"
         />
-        <div {...bem('textarea')}>
+        <div className={bem('textarea')}>
           <ContentEditable
-            {...bem('note')}
+            className={bem('note')}
             html={note}
             onChange={handleChange('note')}
           />
-          {note === '' ? <div {...bem('placeholder')}>Take a note...</div> : null}
+          {note === '' ? <div className={bem('placeholder')}>Take a note...</div> : null}
         </div>
-        <div {...bem('actions')}>
-          <div {...bem('buttons')}>
+        <div className={bem('actions')}>
+          <div className={bem('buttons')}>
             <CustomButton
               onClick={handleSubmit}
               disabled={!canSubmit}
-              text="Save"
-              textClassName="CreateNote__cancel"
+              text={submitting ? 'Saving' : 'Save'}
+              textClassName={bem('cancel')}
               icon="save"
               loading={submitting}
               loadingSize={24}
-              className="CreateNote__save"
+              className={bem('save')}
               border="1px solid #E0E0E0"
               borderRadius="5px"
               padding={8}
@@ -94,22 +94,22 @@ class CreateNote extends Component {
             >
               {COLORS.map(color => (
                 <MenuItem key={color} value={color} style={{ paddingLeft: 11 }}>
-                  <div {...bem('color-item')} style={{ backgroundColor: color }} />
+                  <div className={bem('color-item')} style={{ backgroundColor: color }} />
                 </MenuItem>
               ))}
             </Select>
             <CustomButton
               onClick={initState}
               text="Cancel"
-              textClassName="CreateNote__cancel"
+              textClassName={bem('cancel')}
               padding="12px 8px"
             />
           </div>
-          <div {...bem('settings')}>
+          <div className={bem('settings')}>
             <CustomButton
               onClick={handleChange('pinned', true)}
               icon={pinned ? 'turned_in' : 'turned_in_not'}
-              iconClassName="CreateNote__settings-icon"
+              iconClassName={bem('settings-icon')}
               padding={7}
             />
           </div>

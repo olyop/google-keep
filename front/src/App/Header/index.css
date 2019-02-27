@@ -33,6 +33,19 @@
       color: #757575;
       font-weight: 300;
       font-size: 25px; }
-  .Header__foo {
-    font-size: 28px;
-  }
+  .Header__account {}
+    .Header__account-icon-container {
+      transition: .2s all;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .Header__account-icon-container:hover {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); }
+      .Header__account-icon {
+        margin: -6px 0 0 -6px;
+        line-height: 46px;
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        font-size: 46px; }

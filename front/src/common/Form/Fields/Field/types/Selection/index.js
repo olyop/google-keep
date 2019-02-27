@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { string } from 'prop-types'
 
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
@@ -35,7 +35,7 @@ const Selection = ({val,handleChange,name,camelCase,type,helperText,required,sel
 )
 
 Selection.propTypes = {
-  val: PropTypes.string.isRequired
+  val: string.isRequired
 }
 
 export default Selection

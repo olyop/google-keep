@@ -101,7 +101,7 @@ class App extends Component {
 
 export default () => (
   <Router>
-    <div {...bem('')}>
+    <div className={bem('')}>
       <App />
     </div>
   </Router>

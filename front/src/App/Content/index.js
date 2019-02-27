@@ -10,7 +10,7 @@ import './index.css'
 const bem = componentClassNames('Content')
 
 const Content = props => (
-  <div {...bem('')}>
+  <div className={bem('')}>
     <Views {...props} />
     <Footer />
   </div>

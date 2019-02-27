@@ -7,7 +7,7 @@ import './index.css'
 const bem = componentClassNames('Footer')
 
 const Footer = props => (
-  <div {...bem('')}>
+  <div className={bem('')}>
 
   </div>
 )

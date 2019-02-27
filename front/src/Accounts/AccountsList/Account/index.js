@@ -8,19 +8,19 @@ import './index.css'
 const bem = componentClassNames('Account')
 
 const Account = ({ logIn, _id, firstName, familyName }) => (
-  <div {...bem('')} onClick={logIn(_id)}>
-    <div {...bem('content')}>
+  <div className={bem('')} onClick={logIn(_id)}>
+    <div className={bem('content')}>
       <img
-        {...bem('dp')}
+        className={bem('dp')}
         src={AWS_DEFAULT_DP}
         alt="default-dp"
       />
-      <div {...bem('info')}>
-        <h1 {...bem('firstName')}>{firstName}</h1>
-        <h2 {...bem('familyName')}>{familyName}</h2>
+      <div className={bem('info')}>
+        <h1 className={bem('firstName')}>{firstName}</h1>
+        <h2 className={bem('familyName')}>{familyName}</h2>
       </div>
     </div>
-    <div {...bem('actions')}>
+    <div className={bem('actions')}>
 
     </div>
   </div>

@@ -2,10 +2,12 @@ import React from 'react'
 
 import CustomButton from './Button'
 
-import { classNames } from '../../helpers'
+import { componentClassNames } from '../../helpers'
+
+const bem = componentClassNames('Button')
 
 const CustomButtonContainer = props => (
-  <div {...classNames('Button', props.className)}>
+  <div className={bem({ ignore: true, className: props.className }, '')}>
     <CustomButton {...props} />
   </div>
 )

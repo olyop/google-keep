@@ -1,4 +1,4 @@
-import { join } from 'lodash'
+import { join, isString, isObject, isUndefined } from 'lodash'
 
 export const pipe = x => (...fns) => fns.reduce((v, f) => f(v), x)
 
@@ -9,18 +9,35 @@ export const classNames = (...classNames) => ({
   )
 })
 
-export const componentClassNames = componentName => (...classNames) => {
-  const arr = [ ...classNames ]
-  const ignore = arr.map(x => x.ignore === true)
-  return {
-    className: arr[0] === ''  ? (
-      componentName
-    ) : (
-      join(
-        arr.filter(x => x !== undefined || x.className === undefined)
-          .map((x, i) => ignore[i] ? x.className : `${componentName}__${x}`),
-        ' '
-      )
+export const componentClassNames = componentName => (...args) => (
+  [ ...args ]
+    .map(className => {
+      const def = className => ({ ignore: false, className })
+      if (isString(className)) {
+        return def(className)
+      } else if (isUndefined(className) || isUndefined(className.className)) {
+        return def(undefined)
+      } else if (isObject(className)) {
+        return { ...def(''), ...className }
+      } else {
+        return def('')
+      }
+    })
+    .filter(className => (
+      isUndefined(className.className) === false
+    ))
+    .reduce(
+      (classes, { ignore, className }) => {
+        if (ignore) {
+          classes += className
+        } else if (className === '') {
+          classes += componentName
+        } else {
+          classes += `${componentName}__${className}`
+        }
+        return classes += ' '
+      },
+      ''
     )
-  }
-}
+    .trim()
+)

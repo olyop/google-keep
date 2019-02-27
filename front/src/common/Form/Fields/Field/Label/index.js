@@ -1,7 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import InputLabel from '@material-ui/core/InputLabel'
+
+import { propTypes, defaultProps } from './props'
 
 const labelRequiredStr = (label, required) => label + (required ? ' *' : '')
 
@@ -12,13 +13,7 @@ const Label = ({ name, required }) => (
   />
 )
 
-Label.propTypes = {
-  name: PropTypes.string.isRequired,
-  required: PropTypes.bool
-}
-
-Label.defaultProps = {
-  required: false
-}
+Label.propTypes = propTypes
+Label.defaultProps = defaultProps
 
 export default Label

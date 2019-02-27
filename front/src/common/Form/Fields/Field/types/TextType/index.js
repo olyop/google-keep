@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { oneOfType, string, number } from 'prop-types'
 
 import Input from '@material-ui/core/Input'
 import HelperText from '../../HelperText'
@@ -30,7 +30,7 @@ const TextType = ({val,errors,handleChange,name,camelCase,type,placeholder,helpe
 )
 
 TextType.propTypes = {
-  val: PropTypes.oneOfType([ PropTypes.string, PropTypes.number]).isRequired
+  val: oneOfType([ string, number]).isRequired
 }
 
 export default TextType

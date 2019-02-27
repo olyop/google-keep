@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { bool, string } from 'prop-types'
 
 import Switch from '@material-ui/core/Switch'
 import HelperText from '../../HelperText'
@@ -24,8 +24,8 @@ const BooleanType = ({val,handleChange,name,camelCase,type,helperText,booleanTex
 )
 
 BooleanType.propTypes = {
-  val: PropTypes.bool.isRequired,
-  booleanText: PropTypes.string.isRequired
+  val: bool.isRequired,
+  booleanText: string.isRequired
 }
 
 export default BooleanType
