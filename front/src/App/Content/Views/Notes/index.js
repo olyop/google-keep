@@ -25,10 +25,12 @@ const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned,
     const isPinnedEmpty = pinnedNotes.length === 0
     const isNotPinnedEmpty = notPinnedNotes.length === 0
     return <Fragment>
-      <CreateNote
-        className={bem('create')}
-        handleSubmit={addNote}
-      />
+      <div className={bem('create-container')}>
+        <CreateNote
+          className={bem('create')}
+          handleSubmit={addNote}
+        />
+      </div>
       <div className={bem('notes')}>
         {isPinnedEmpty ? null : <Fragment>
           <h1 className={bem('heading')}>Pinned</h1>

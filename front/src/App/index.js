@@ -27,8 +27,14 @@ class App extends Component {
     this.deleteNote = this.deleteNote.bind(this)
   }
   componentDidMount() {
+    this.getNotes()
+  }
+  getNotes = callback => {
     axios.get(url, config)
-      .then(res => this.setState({ notes: addKey(res.data) }))
+      .then(res => this.setState(
+        { notes: addKey(res.data) },
+        callback
+      ))
       .catch(err => this.setState({ notes: err }))
   }
   toggleHamburger = () => this.setState(

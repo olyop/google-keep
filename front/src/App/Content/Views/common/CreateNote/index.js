@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 
 import CustomButton from '../../../../../common/Button'
 import ContentEditable from 'react-contenteditable'

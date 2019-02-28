@@ -80,6 +80,7 @@ export default class Note extends Component {
                 onClick={handleSubmit}
                 icon="save"
                 text="Save"
+                textClassName={bem('edit-text')}
                 loading={isEditing}
                 {...buttonProps}
               />
@@ -88,6 +89,7 @@ export default class Note extends Component {
                 disabled={isEditing}
                 icon="done"
                 text="Cancel"
+                textClassName={bem('edit-text')}
                 loading={isPinning}
                 {...buttonProps}
               />
