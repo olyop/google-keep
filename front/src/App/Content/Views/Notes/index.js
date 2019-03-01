@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 import AxiosError from '../../../../common/AxiosError'
 import Loading from '../../../../common/Loading'
-import Button from '../../../../common/Button'
+// import Button from '../../../../common/Button'
 import CreateNote from '../common/CreateNote'
 import Notes from '../common/Notes'
 
@@ -24,8 +24,6 @@ const bem = componentClassNames('NotesView')
 //     <h1 className={bem('heading')}>{text}</h1>
 //   </div>
 // )
-
-const NotesViewSection =
 
 const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned, putNote, deleteNote }) => {
   if (isError(notes)) {

@@ -50,6 +50,10 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;}
+        .CreateNote__list-check {
+          margin-right: 5px; }
+          .CreateNote__list-check-icon {
+            font-size: 30px; }
         .CreateNote__settings-icon {
           font-size: 28px; }
         .CreateNote__color-item {

@@ -4,21 +4,21 @@ export default [
     camelCase: 'firstName',
     type: 'text',
     required: true,
-    def: 'Oliver'
+    def: 'foo'
   },
   {
     name: 'Family Name',
     camelCase: 'familyName',
     type: 'text',
     required: true,
-    def: 'Plummer'
+    def: 'bar'
   },
   {
     name: 'Email',
     camelCase: 'email',
     type: 'text',
     required: true,
-    def: 'oly.rbsc@gmail.com'
+    def: 'foo@bar.com'
   },
   {
     name: 'Date of Birth',

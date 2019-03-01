@@ -1,6 +1,7 @@
 export default {
   accounts: null,
-  createAccount: true,
+  createAccount: false,
   isLoggedIn: true,
-  account: null
+  account: null,
+  deleteLoading: []
 }

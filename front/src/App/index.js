@@ -70,10 +70,10 @@ class App extends Component {
     () => {
       axios.delete(url, { ...config, data: { _id } })
         .then(res => this.setState(
-          ({ deleteLoading }) => ({ deleteLoading: deleteLoading.filter(x => x !== res.data._id) }),
-          this.setState(
-            ({ notes }) => ({ notes: addKey(notes.filter(x => x._id !== res.data._id)) })
-          )
+          ({ notes, deleteLoading }) => ({
+            notes: addKey(notes.filter(x => x._id !== res.data._id)),
+            deleteLoading: deleteLoading.filter(x => x !== res.data._id)
+          })
         ))
         .catch(err => this.setState({ notes: err }))
     }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import CustomButton from '../../../../../common/Button'
 import ContentEditable from 'react-contenteditable'
 import MenuItem from '@material-ui/core/MenuItem'
+import Button from '../../../../../common/Button'
 import Select from '@material-ui/core/Select'
 import Input from '@material-ui/core/Input'
 
@@ -27,6 +27,7 @@ class CreateNote extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.initState = this.initState.bind(this)
+    this.toggleList = this.toggleList.bind(this)
   }
   handleChange = (camelCase, isBool = false) => event => {
     const { value } = event.target
@@ -49,10 +50,13 @@ class CreateNote extends Component {
       res => this.initState()
     )
   )
+  toggleList = () => this.setState(
+    ({ type }) => ({ type: type === 'note' ? 'list' : 'note' })
+  )
   render() {
-    const { props, state, handleChange, handleSubmit, initState } = this
+    const { props, state, handleChange, handleSubmit, initState, toggleList } = this
     const { className, classes } = props
-    const { submitting, fields } = state
+    const { submitting, type, fields } = state
     const { title, note, pinned, color } = fields
     const canSubmit = checkCanSubmit(fields)
     return (
@@ -74,7 +78,7 @@ class CreateNote extends Component {
         </div>
         <div className={bem('actions')}>
           <div className={bem('buttons')}>
-            <CustomButton
+            <Button
               onClick={handleSubmit}
               disabled={!canSubmit}
               text={submitting ? 'Saving' : 'Save'}
@@ -98,7 +102,7 @@ class CreateNote extends Component {
                 </MenuItem>
               ))}
             </Select>
-            <CustomButton
+            <Button
               onClick={initState}
               text="Cancel"
               textClassName={bem('cancel')}
@@ -106,7 +110,14 @@ class CreateNote extends Component {
             />
           </div>
           <div className={bem('settings')}>
-            <CustomButton
+            <Button
+              onClick={toggleList}
+              className={bem('list-check')}
+              icon={type}
+              iconClassName={bem('list-check-icon')}
+              padding={6}
+            />
+            <Button
               onClick={handleChange('pinned', true)}
               icon={pinned ? 'turned_in' : 'turned_in_not'}
               iconClassName={bem('settings-icon')}

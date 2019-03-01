@@ -1,0 +1,60 @@
+.Account {
+  cursor: pointer;
+  transition: .2s all;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  width: calc(100% - 30px);
+  margin-bottom: 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px; }
+  .Account:hover {
+    box-shadow:
+      0 1px 2px 0 rgba(60,64,67,0.30),
+      0 1px 3px 1px rgba(60,64,67,0.15); }
+  .Account:hover .Account__delete {
+    visibility: visible;
+    opacity: 1; }
+  .Account:hover .Account__log-in {
+    display: flex; }
+  .Account:last-child {
+    margin: 0; }
+  .Account__content {
+    display: flex;
+    justify-content: space-between; }
+    .Account__dp {
+      border-radius: 100%;
+      margin-right: 10px;
+      border: 1px solid #E0E0E0;
+      width: 50px;
+      height: 50px; }
+    .Account__log-in {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px; }
+      .Account__log-in-text {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 17px; }
+    .Account__info {
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      .Account__firstName {
+        line-height: 22px;
+        font-size: 22px;
+        margin: 0 0 3px 0; }
+      .Account__familyName {
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0; }
+  .Account__actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .Account__delete {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .2s linear; }

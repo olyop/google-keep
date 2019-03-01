@@ -51,16 +51,22 @@ export default class Accounts extends Component {
       })
       .catch(err => this.setState({ accounts: err }))
   }
-  deleteAccount = _id => () => {
-    axios.delete(url, { data: { _id }, ...config })
-      .then(res => this.setState(
-        ({ accounts }) => ({ accounts: accounts.filter(account => account._id !== res.data._id) })
-      ))
-      .catch(err => this.setState({ accounts: err }))
-  }
+  deleteAccount = _id => () => this.setState(
+    ({ deleteLoading }) => ({ deleteLoading: concat(deleteLoading, _id) }),
+    () => {
+      axios.delete(url, { data: { _id }, ...config })
+        .then(res => this.setState(
+          ({ accounts, deleteLoading }) => ({
+            accounts: accounts.filter(account => account._id !== res.data._id),
+            deleteLoading: deleteLoading.filter(_id => _id !== res.data._id)
+          })
+        ))
+        .catch(err => this.setState({ accounts: err }))
+    }
+  )
   render() {
-    const { state, toggleCreateAccount, logIn, addAccount } = this
-    const { accounts, createAccount, isLoggedIn, account } = state
+    const { state, toggleCreateAccount, logIn, addAccount, deleteAccount } = this
+    const { accounts, createAccount, isLoggedIn, account, deleteLoading } = state
     if (isLoggedIn) {
       return <App account={account} />
     } else if (isError(accounts)) {
@@ -83,6 +89,9 @@ export default class Accounts extends Component {
               <AccountsList
                 accounts={accounts}
                 logIn={logIn}
+                toggleCreateAccount={toggleCreateAccount}
+                deleteAccount={deleteAccount}
+                deleteLoading={deleteLoading}
               />
             </Fragment>}
           </div>
