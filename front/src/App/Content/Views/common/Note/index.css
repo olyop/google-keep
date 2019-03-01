@@ -1,6 +1,5 @@
 .Note {
-  position: relative;
-  margin: 7px; }
+  position: relative; }
   .Note__inner {
     border-radius: 3px;
     border: 1px solid #E0E0E0;
@@ -40,7 +39,7 @@
         font-weight: 400;
         font-size: 15px; }
     .Note__actions {
-      padding: 0 15px 15px 8px;
+      padding: 0 15px 17px 8px;
       margin: 0;
       height: 24px;
       display: flex; }
@@ -50,5 +49,7 @@
         transition: visibility 0s, opacity .2s linear; }
         .Note__edit {
           color: #333333; }
-        .Note__edit-text {
-          padding-right: 3px; }
+        .Note__edit-save {
+          margin-left: 2px; }
+          .Note__button-text {
+            padding-right: 3px; }

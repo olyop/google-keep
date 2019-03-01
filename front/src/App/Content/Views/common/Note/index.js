@@ -50,7 +50,9 @@ export default class Note extends Component {
         { isEditing: true },
         putNote(
           submitFields({ _id, type, title, note, color, dateCreated, listItems, pinned, hidden }),
-          res => this.setState(initState(res.data.title, res.data.note))
+          res => this.setState(
+            initState(res.data.title, res.data.note)
+          )
         )
       )
     }
@@ -71,6 +73,7 @@ export default class Note extends Component {
             className={bem('close')}
             icon="close"
             iconClassName={bem('close-icon')}
+            style={{ backgroundColor: color }}
             padding={0}
           />
           <NoteContent {...{ toggleEdit, handleInputChange, title, note, edit }} />
@@ -78,9 +81,10 @@ export default class Note extends Component {
             {edit ? <Fragment>
               <Button
                 onClick={handleSubmit}
+                className={bem('edit-save')}
                 icon="save"
                 text="Save"
-                textClassName={bem('edit-text')}
+                textClassName={bem('button-text')}
                 loading={isEditing}
                 {...buttonProps}
               />
@@ -89,7 +93,7 @@ export default class Note extends Component {
                 disabled={isEditing}
                 icon="done"
                 text="Cancel"
-                textClassName={bem('edit-text')}
+                textClassName={bem('button-text')}
                 loading={isPinning}
                 {...buttonProps}
               />

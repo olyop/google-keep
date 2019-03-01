@@ -18,7 +18,7 @@
     flex-direction: column;
     width: 1000px; }
     .NotesView__heading {
-      margin: 10px 0 5px 35px;
+      margin: 10px 20px 5px 20px;
       font-weight: 600;
       text-transform: uppercase;
       color: #757575;

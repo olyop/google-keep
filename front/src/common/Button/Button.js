@@ -14,7 +14,7 @@ const bem = componentClassNames('Button')
 
 const CustomButton = ({
   classes, onClick, padding, border, loading, borderRadius, disabled, text, iconTextSpace,
-  textClassName, icon, iconClassName, iconTextSpacing, loadingHideText, loadingSize, html
+  textClassName, icon, iconClassName, iconTextSpacing, loadingHideText, loadingSize, html, style
 }) => (
   <Button
     onClick={onClick}
@@ -24,7 +24,8 @@ const CustomButton = ({
     }}
     style={{
       padding, border,
-      borderRadius: borderRadius ? borderRadius : (text === undefined || (loading && loadingHideText) ? '100%' : 5)
+      borderRadius: borderRadius ? borderRadius : (text === undefined || (loading && loadingHideText) ? '100%' : 5),
+      ...style
     }}
     disabled={disabled}
     children={<Fragment>

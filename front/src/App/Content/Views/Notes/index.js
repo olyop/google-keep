@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 
 import AxiosError from '../../../../common/AxiosError'
 import Loading from '../../../../common/Loading'
+import Button from '../../../../common/Button'
 import CreateNote from '../common/CreateNote'
 import Notes from '../common/Notes'
 
@@ -13,6 +14,19 @@ import './index.css'
 
 const bem = componentClassNames('NotesView')
 
+// const Heading = text => (
+//   <div className={bem('heading-container')}>
+//     <Button
+//       icon={'minimize'}
+//       borderRadius={5}
+//       padding={0}
+//     />
+//     <h1 className={bem('heading')}>{text}</h1>
+//   </div>
+// )
+
+const NotesViewSection =
+
 const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned, putNote, deleteNote }) => {
   if (isError(notes)) {
     return <AxiosError err={notes} />
@@ -21,9 +35,9 @@ const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned,
   } else if (isArray(notes)) {
     const pinnedNotes = notes.filter(note => note.pinned)
     const notPinnedNotes = notes.filter(note => note.pinned === false)
-    const notesProps = { pinnedLoading, deleteLoading, togglePinned, putNote, deleteNote }
     const isPinnedEmpty = pinnedNotes.length === 0
     const isNotPinnedEmpty = notPinnedNotes.length === 0
+    const notesProps = { pinnedLoading, deleteLoading, togglePinned, putNote, deleteNote }
     return <Fragment>
       <div className={bem('create-container')}>
         <CreateNote

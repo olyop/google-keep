@@ -13,7 +13,8 @@ export const propTypes = {
   loadingHideText: bool,
   loadingSize: number,
   iconTextSpace: number,
-  html: node
+  html: node,
+  style: object
 }
 
 export const defaultProps = {
@@ -28,5 +29,6 @@ export const defaultProps = {
   loadingHideText: false,
   loadingSize: 20,
   iconTextSpace: 3,
-  html: undefined
+  html: undefined,
+  styke: undefined
 }
