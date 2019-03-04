@@ -16,8 +16,8 @@
   "homepage": "",
   "proxy": "http://localhost:3000/",
   "scripts": {
-    "front": "clear && cd front && npm start",
-    "back": "clear && cd back && nodemon bin/www",
+    "front": "cls && cd front && npm start",
+    "back": "cls && cd back && nodemon bin/www",
     "dependencies": "cd front && del /f package-lock.json && npm i && cd .. && cd back && del /f package-lock.json && npm i && cd ..",
     "update": "cd front && npm update && cd .. && cd back && npm update && cd ..",
     "audit": "cd front && npm audit fix && cd .. && cd back && npm audit fix && cd ..",
