@@ -13,7 +13,7 @@ import './index.css'
 const bem = componentClassNames('Button')
 
 const CustomButton = ({
-  classes, onClick, padding, border, loading, borderRadius, disabled, text, iconTextSpace,
+  classes, onClick, padding, border, loading, borderRadius, disabled, text, iconTextSpace, margin,
   textClassName, icon, iconClassName, iconTextSpacing, loadingHideText, loadingSize, html, style
 }) => (
   <Button
@@ -23,7 +23,7 @@ const CustomButton = ({
       label: classes.label
     }}
     style={{
-      padding, border,
+      padding, border, margin,
       borderRadius: borderRadius ? borderRadius : (text === undefined || (loading && loadingHideText) ? '100%' : 5),
       ...style
     }}

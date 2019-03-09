@@ -1,0 +1,30 @@
+.CreateNoteActions__actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+  .CreateNoteActions__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .CreateNoteActions__save {
+      margin-right: 7px; }
+    .CreateNoteActions__cancel {
+      text-transform: uppercase;
+      font-size: 15px; }
+  .CreateNoteActions__settings {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;}
+    .CreateNoteActions__list-check {
+      margin-right: 5px; }
+      .CreateNoteActions__list-check-icon {
+        font-size: 30px; }
+    .CreateNoteActions__settings-icon {
+      font-size: 28px; }
+    .CreateNoteActions__color-item {
+      border-radius: 100%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      margin-left: 8px;
+      width: 29px;
+      height: 29px; }

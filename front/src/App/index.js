@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 
-import axios from 'axios'
-import initState from './initState'
-import { componentClassNames } from '../helpers'
-import { concat, find } from 'lodash'
-import { addKey, updateNotes } from './helpers'
 import { API_NOTES as url, AXIOS_CONFIG as config } from '../globals'
+import { componentClassNames } from '../helpers'
+import { addKey, updateNotes } from './helpers'
+import { concat, find } from 'lodash'
+import initState from './initState'
+import axios from 'axios'
 
 import { BrowserRouter as Router } from 'react-router-dom'
 

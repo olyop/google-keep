@@ -2,8 +2,9 @@ import React, { Fragment } from 'react'
 
 import Button from '../../common/Button'
 
-import { AWS_LOGO } from '../../globals'
 import { classNames, componentClassNames } from '../../helpers'
+import { AWS_LOGO } from '../../globals'
+import { propTypes } from './props'
 
 import './hamburgers.min.css'
 import './index.css'
@@ -38,7 +39,9 @@ const Logo = () => (
   </a>
 )
 
-const Title = () => <h1 className={bem('title')}>Keep</h1>
+const Title = () => (
+  <h1 className={bem('title')}>Keep</h1>
+)
 
 const AccountButton = () => (
   <Button
@@ -64,5 +67,7 @@ const Header = ({ hamburger, toggleHamburger }) => (
     </div>
   </div>
 )
+
+Header.propTypes = propTypes
 
 export default Header

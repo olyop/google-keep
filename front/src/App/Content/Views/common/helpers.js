@@ -1,4 +1,5 @@
 import he from 'he'
+
 import { pipe } from '../../../../helpers'
 
 const decodeNoteField = fields => ({

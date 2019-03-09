@@ -3,14 +3,15 @@ import { COLORS } from '../../../../../globals'
 export default {
   submitting: false,
   errors: [],
-  type: 'note',
   fields: {
     title: '',
     note: '',
     pinned: false,
     hidden: false,
-    type: 'note',
+    type: 'list',
     color: COLORS[0],
-    listItems: []
+    listItems: [
+      { key: 0, checked: false, text: '' }
+    ]
   }
 }

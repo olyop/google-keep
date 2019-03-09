@@ -14,18 +14,14 @@ import './index.css'
 
 const bem = componentClassNames('NotesView')
 
-// const Heading = text => (
-//   <div className={bem('heading-container')}>
-//     <Button
-//       icon={'minimize'}
-//       borderRadius={5}
-//       padding={0}
-//     />
-//     <h1 className={bem('heading')}>{text}</h1>
-//   </div>
-// )
+const NotesHeading = ({ children }) => (
+  <h1 className={bem('heading')}>{children}</h1>
+)
 
-const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned, putNote, deleteNote }) => {
+const NotesView = ({
+  notes, pinnedLoading, deleteLoading,
+  addNote, togglePinned, putNote, deleteNote
+}) => {
   if (isError(notes)) {
     return <AxiosError err={notes} />
   } else if (isNull(notes)) {
@@ -45,7 +41,7 @@ const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned,
       </div>
       <div className={bem('notes')}>
         {isPinnedEmpty ? null : <Fragment>
-          <h1 className={bem('heading')}>Pinned</h1>
+          <NotesHeading>Pinned</NotesHeading>
           <Notes
             notes={pinnedNotes}
             className={bem('notes-pinned')}
@@ -53,7 +49,7 @@ const NotesView = ({ notes, pinnedLoading, deleteLoading, addNote, togglePinned,
           />
         </Fragment>}
         {(isPinnedEmpty && !isNotPinnedEmpty) || isNotPinnedEmpty ? null : (
-          <h1 className={bem('heading')}>Others</h1>
+          <NotesHeading>Others</NotesHeading>
         )}
         {isNotPinnedEmpty ? null : <Fragment>
           <Notes

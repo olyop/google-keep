@@ -14,7 +14,8 @@ export const propTypes = {
   loadingSize: number,
   iconTextSpace: number,
   html: node,
-  style: object
+  style: object,
+  margin: oneOfType([ number, string ])
 }
 
 export const defaultProps = {
@@ -30,5 +31,6 @@ export const defaultProps = {
   loadingSize: 20,
   iconTextSpace: 3,
   html: undefined,
-  styke: undefined
+  styke: undefined,
+  margin: 0
 }

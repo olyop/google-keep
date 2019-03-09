@@ -7,3 +7,15 @@ export const checkCanSubmit = ({ title, note, color, pinned }) => {
   if (note === '') { flag = false }
   return flag
 }
+
+export const updateListItems = (listItems, newItem) => listItems.reduce(
+  (newListItems, listItem) => {
+    if (listItem.index === newItem.index) {
+      newListItems.push(newItem)
+    } else {
+      newListItems.push(listItem)
+    }
+    return newListItems
+  },
+  []
+)

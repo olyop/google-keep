@@ -76,7 +76,9 @@ export default class Note extends Component {
             style={{ backgroundColor: color }}
             padding={0}
           />
-          <NoteContent {...{ toggleEdit, handleInputChange, title, note, edit }} />
+          <NoteContent
+            {...{ toggleEdit, handleInputChange, title, note, edit }}
+          />
           <div className={bem('actions')}>
             {edit ? <Fragment>
               <Button

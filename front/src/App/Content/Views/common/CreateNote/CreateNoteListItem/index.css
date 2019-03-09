@@ -1,0 +1,10 @@
+.CreateNoteListItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+  .CreateNoteListItem__checked {
+    margin: 0 5px 0 10px; }
+  .CreateNoteListItem__input {
+    font-size: 15px;
+    border: 0;
+    outline: 0; }

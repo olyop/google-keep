@@ -9,11 +9,9 @@ import './index.css'
 
 const bem = componentClassNames('Content')
 
-const Content = props => (
+export default props => (
   <div className={bem('')}>
     <Views {...props} />
     <Footer />
   </div>
 )
-
-export default Content
